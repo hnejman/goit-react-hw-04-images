@@ -25,6 +25,7 @@ export const App = () => {
       closeModal();
     }
   };
+  
 
   useEffect(() => {
     document.addEventListener("keydown", escFunction);
