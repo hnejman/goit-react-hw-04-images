@@ -10,6 +10,7 @@ import 'components/styles.css';
 axios.defaults.baseURL = 'https://pixabay.com/api';
 
 export const App = () => {
+  
   const [isLoading, setIsLoading] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [isButton, setIsButton] = useState(false);
