@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { getFromAPI } from 'getFromAPI';
 import { Searchbar } from 'components/Searchbar';
 import { ImageGallery } from 'components/ImageGallery';
 import { Loader } from 'components/Loader';
 import { Button } from 'components/Button';
 import { Modal } from 'components/Modal';
 import 'components/styles.css';
-
-axios.defaults.baseURL = 'https://pixabay.com/api';
 
 export const App = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -32,15 +30,7 @@ export const App = () => {
     return () => {
       document.removeEventListener("keydown", escFunction);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isModal]);
-
-  async function getFromAPI(search, key, page) {
-    const response = await axios.get(
-      `?key=${key}&page=${page}&q=${search}&image_type=photo&orientation=horizontal&per_page=12`
-    );
-    return response.data.hits;
-  }
 
   const search = (evt) => {
     evt.preventDefault();
@@ -54,7 +44,7 @@ export const App = () => {
         setPageNr(2);
         setIsLoading(false);
         let btn = false;
-        if (response.length === 12) {
+        if (response.data.totalHits>15) {
           btn = true;
         }
         setIsButton(btn);
