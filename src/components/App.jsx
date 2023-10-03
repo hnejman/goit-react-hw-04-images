@@ -30,7 +30,7 @@ export const App = () => {
     return () => {
       document.removeEventListener("keydown", escFunction);
     };
-  }, [isModal]);
+  });
 
   const search = (evt) => {
     evt.preventDefault();
@@ -40,7 +40,6 @@ export const App = () => {
 
     getFromAPI(value, key, 1)
       .then((response) => {
-        console.log(response)
         setData(response.data.hits);
         setPageNr(2);
         setIsLoading(false);
