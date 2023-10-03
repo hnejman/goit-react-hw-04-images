@@ -40,7 +40,8 @@ export const App = () => {
 
     getFromAPI(value, key, 1)
       .then((response) => {
-        setData(response);
+        console.log(response)
+        setData(response.data.hits);
         setPageNr(2);
         setIsLoading(false);
         let btn = false;
