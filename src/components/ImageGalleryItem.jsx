@@ -15,6 +15,9 @@ export class ImageGalleryItem extends Component {
     }
 }
 
-import { PropTypes } from 'prop-types'{
-    
+ImageGalleryItem.propTypes = {
+    loadModal: PropTypes.func.isRequired,
+    tags: PropTypes.string,
+    large: PropTypes.string,
+    web: PropTypes.string
 }

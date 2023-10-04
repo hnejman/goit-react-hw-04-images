@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { ImageGalleryItem } from 'components/ImageGalleryItem';
+import { PropTypes } from 'prop-types';
 
 export class ImageGallery extends Component {
   state = {
@@ -25,4 +26,9 @@ export class ImageGallery extends Component {
       </ul>
     );
   }
+}
+
+ImageGallery.propTypes = {
+  loadModal: PropTypes.func.isRequired,
+  gallery: PropTypes.array,
 }
