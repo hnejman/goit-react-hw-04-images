@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 export class Modal extends Component {
   render() {
@@ -12,4 +13,10 @@ export class Modal extends Component {
       </>
     );
   }
+}
+
+Modal.propTypes = {
+  closeModal: PropTypes.func.isRequired,
+  modalSrc: PropTypes.string,
+  modalAlt: PropTypes.string
 }

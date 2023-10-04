@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { PropTypes } from 'prop-types';
 
 export class ImageGalleryItem extends Component {
     render(){
@@ -12,4 +13,8 @@ export class ImageGalleryItem extends Component {
                 ></img>
         )
     }
+}
+
+import { PropTypes } from 'prop-types'{
+    
 }
