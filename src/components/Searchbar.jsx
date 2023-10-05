@@ -1,15 +1,13 @@
-import { Component } from 'react';
 import { PropTypes } from 'prop-types';
 
-export class Searchbar extends Component {
+export const Searchbar = ({search}) => {
 
-  render() {
     return (
       <header className="Searchbar">
         <form
           className="SearchForm"
           onSubmit={(evt) => {
-            this.props.search(evt);
+            search(evt);
           }}
         >
           <button type="submit" className="SearchForm-button">
@@ -27,7 +25,6 @@ export class Searchbar extends Component {
         </form>
       </header>
     );
-  }
 }
 
 Searchbar.propTypes={

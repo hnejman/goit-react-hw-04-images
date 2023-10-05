@@ -70,7 +70,7 @@ export const App = () => {
 
     getFromAPI(searchValue, key, pageNr)
       .then((response) => {
-        setData((prevData) => prevData.concat(response));
+        setData((prevData) => [...prevData, ...response.data.hits]);
         setIsLoading(false);
       })
       .catch((error) => {

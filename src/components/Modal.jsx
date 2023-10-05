@@ -1,18 +1,15 @@
-import { Component } from 'react';
 import { PropTypes } from 'prop-types';
 
-export class Modal extends Component {
-  render() {
+export const Modal = ({closeModal, modalSrc, modalAlt }) => {
     return (
       <>
-        <div class="Overlay" onClick={this.props.closeModal}>.
+        <div class="Overlay" onClick={ closeModal }>.
           <div class="Modal">
-            <img src={this.props.modalSrc} alt={this.props.modalAlt} />
+            <img src={ modalSrc } alt={ modalAlt } />
           </div>
         </div>
       </>
     );
-  }
 }
 
 Modal.propTypes = {
